@@ -1,0 +1,871 @@
+//This is a list of all the variables  with their tags and help text
+//Commands are included at the bottom in a separate array data['variables'] vs data['commands']
+//The pause and delay functions are also included
+//Example accessing value data['variables'][30]['name']
+data = {
+	"variables":[
+		{
+			"name": "album",
+			"tags": "",
+			"helpText": "Test Help Text",
+		},
+	    {
+			"name": "alphabetRandom",
+			"tags": "grammer",
+			"helpText": "Test Help Text",
+		},
+	    {
+			"name": "artDetail",
+			"tags": "art complex",
+			"helpText": "Test Help Text",
+		},
+	    {
+			"name": "artDollarsRandom",
+			"tags": "art dollarValue",
+			"helpText": "Test Help Text",
+		},
+	    {
+			"name": "artEstablishmentName",
+			"tags": "nounProper art",
+			"helpText": "Test Help Text",
+		},
+	    {
+			"name": "artExpert",
+			"tags": "people art",
+			"helpText": "Test Help Text",
+		},
+	    {
+			"name": "artist_adjective",
+			"tags": "grammar art",
+			"helpText": "Test Help Text",
+		},
+	    {
+			"name": "b_band",
+			"tags": "band nounProper people",
+			"helpText": "Test Help Text",
+		},
+	    {
+			"name": "b_detail",
+			"tags": "band complex",
+			"helpText": "Test Help Text",
+		},
+	    {
+			"name": "b_genre",
+			"tags": "noun band",
+			"helpText": "Test Help Text",
+		},
+	    {
+			"name": "b_intro",
+			"tags": "band complex",
+			"helpText": "Test Help Text",
+		},
+	    {
+			"name": "b_movieGenerated",
+			"tags": "",
+			"helpText": "Test Help Text",
+		},
+	    {
+			"name": "b_musicLine",
+			"tags": "band complex",
+			"helpText": "Test Help Text",
+		},
+	    {
+			"name": "b_name",
+			"tags": "band nounProper people",
+			"helpText": "Test Help Text",
+		},
+	    {
+			"name": "b_song",
+			"tags": "band nounProper",
+			"helpText": "Test Help Text",
+		},
+	    {
+			"name": "b_songLine",
+			"tags": "complex band",
+			"helpText": "Test Help Text",
+		},
+	    {
+			"name": "bookAuthorTitle",
+			"tags": "complex book",
+			"helpText": "Test Help Text",
+		},
+	    {
+			"name": "bookTitleAuthor",
+			"tags": "complex book",
+			"helpText": "Test Help Text",
+		},
+	    {
+			"name": "bookTitleAuthorGenreType",
+			"tags": "complex book",
+			"helpText": "Test Help Text",
+		},
+	    {
+			"name": "botFollowers",
+			"tags": "constant",
+			"helpText": "Test Help Text",
+		},
+	    {
+			"name": "botUrl",
+			"tags": "constant",
+			"helpText": "Test Help Text",
+		},
+	    {
+			"name": "dateCurrent",
+			"tags": "constant",
+			"helpText": "Test Help Text",
+		},
+	    {
+			"name": "dayName",
+			"tags": "constant",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "f_adjective",
+			"tags": "grammar friend",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "f_creature",
+			"tags": "noun friend",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "f_detail",
+			"tags": "complex friend",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "f_intro",
+			"tags": "complex friend",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "f_nameFirst",
+			"tags": "name friend",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "f_nameLast",
+			"tags": "name friend",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "facebook",
+			"tags": "constant",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "groceryStore",
+			"tags": "placeHuman food",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "houseDescription",
+			"tags": "complex house",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "houseDetail",
+			"tags": "complex house",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "houseDollarsRandom",
+			"tags": "dollarValue house",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "houseLocation",
+			"tags": "placeGeographic house",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "houseYear",
+			"tags": "year house",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "instagram",
+			"tags": "constant",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "mixtapeTheme",
+			"tags": "constant",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "modRandom",
+			"tags": "name",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "movie_intro",
+			"tags": "",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "movieUnlock",
+			"tags": "",
+			"helpText": "Test Help Text",
+		},
+		{
+			"name": "nothing",
+			"tags": "",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "otherBot",
+			"tags": "constant",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "otherBotFollowers",
+			"tags": "constant",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "preposition",
+			"tags": "grammar",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "recipeUnlockBulkingUpIntro",
+			"tags": "food complex phrase",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "tooby",
+			"tags": "tooby",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "toobyColorCurrent",
+			"tags": "constant",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "toobyColorCurrentNoSpaces",
+			"tags": "constant",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "toobyHat",
+			"tags": "",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "tourDate",
+			"tags": "constant",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "tourRequester",
+			"tags": "constant",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "twitchSubUrl",
+			"tags": "constant",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "twitter",
+			"tags": "constant",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "usernameRandom",
+			"tags": "name",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "usernameRandomNoAt",
+			"tags": "name",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "vehicleCompany",
+			"tags": "vehicle nounProper",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "vehicleDescription",
+			"tags": "grammar adjective",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "vehicleModel",
+			"tags": "nounProper vehicle",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "venueName",
+			"tags": "constant",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "venueNameWithPreposition",
+			"tags": "constant",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "venueRequester",
+			"tags": "constant",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "venueWithPreposition",
+			"tags": "constant",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "w_activity",
+			"tags": "wrestler activity",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "w_activityCombined",
+			"tags": "complex wrestler",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "w_activityIntro",
+			"tags": "activity complex wrestler",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "w_activityPre",
+			"tags": "adjective wrestler",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "w_divisions",
+			"tags": "wrestler adjective",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "w_intro",
+			"tags": "complex wrestler",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "w_location",
+			"tags": "placeGeographic wrestler",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "w_moveCombined",
+			"tags": "complex wrestler",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "w_moveIntro",
+			"tags": "complex wrestler",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "w_moveNoun",
+			"tags": "noun wrestler",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "w_movePre",
+			"tags": "adjective wrestler",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "w_nameCombined",
+			"tags": "name wrestler",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "w_nameFirst",
+			"tags": "name wrestler",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "w_nameLast",
+			"tags": "name wrestler",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "w_namePre",
+			"tags": "name adjective wrestler",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "w_status",
+			"tags": "wrestler complex",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "yearCurrent",
+			"tags": "",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "youtubeLink",
+			"tags": "constant",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "z_academyAward",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "z_actor",
+			"tags": "",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "z_adjective",
+			"tags": "adjective grammar",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "z_adjectiveFood",
+			"tags": "adjective food",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "z_adjectiveNegative",
+			"tags": "adjective",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "z_adjectivePositive",
+			"tags": "adjective",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "z_adverb",
+			"tags": "adverb",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "z_amount",
+			"tags": "grammar",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "z_amountCombined",
+			"tags": "grammar",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "z_amountCombinedNoIntro",
+			"tags": "grammar",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "z_amountCombinedWithIngredient",
+			"tags": "grammar",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "z_amountEitherCountableWithS",
+			"tags": "grammar",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "z_art",
+			"tags": "art noun complex<",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "z_artMedium",
+			"tags": "noun art",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "z_artStyle",
+			"tags": "art",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "z_celebrity",
+			"tags": "",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "z_cityUSA",
+			"tags": "placeGeographic",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "z_cityWorld",
+			"tags": "placeGeographic",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "z_clothing",
+			"tags": "noun",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "z_color",
+			"tags": "adjective",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "z_colorCombination",
+			"tags": "adjective",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "z_communicationType",
+			"tags": "noun",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "z_companyName",
+			"tags": "nounProper",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "z_country",
+			"tags": "placeGeographic",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "z_director",
+			"tags": "",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "z_food",
+			"tags": "noun food",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "z_foodCombined",
+			"tags": "food noun",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "z_fruitVegetable",
+			"tags": "noun food",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "z_genreLit",
+			"tags": "book noun",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "z_honorific",
+			"tags": "name",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "z_house",
+			"tags": "house noun",
+			"helpText": "Test Help Text",
+		},
+		{
+			"name": "z_houseRoom",
+			"tags": "house noun",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "z_infoSource",
+			"tags": "phrase",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "z_ingredient",
+			"tags": "noun food",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "z_instrument",
+			"tags": "noun instrument band",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "z_instrumentOne",
+			"tags": "band instrument noun",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "z_instrumentTwo",
+			"tags": "noun band instrument",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "z_interjection",
+			"tags": "grammar",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "z_kitchenContainer",
+			"tags": "noun food",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "z_location",
+			"tags": "placeGeographic",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "z_material",
+			"tags": "noun house",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "z_movie",
+			"tags": "",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "z_nameGeneratedLong",
+			"tags": "name",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "z_nameGeneratedShort",
+			"tags": "name",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "z_nameRandom",
+			"tags": "name",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "z_nameRandomFirstLast",
+			"tags": "name",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "z_noun",
+			"tags": "noun",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "z_nounAbstract",
+			"tags": "noun",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "z_numberRandomLeanTen",
+			"tags": "numbers",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "z_occupation",
+			"tags": "noun people",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "z_periodical",
+			"tags": "nounProper",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "z_relation",
+			"tags": "people noun",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "z_restaurantName",
+			"tags": "placeHuman food",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "z_state",
+			"tags": "placeGeographic",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "z_syllable",
+			"tags": "grammar",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "z_timePeriod",
+			"tags": "nounProper",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "z_vehicle",
+			"tags": "noun vehicle",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "z_verbCooking",
+			"tags": "food verb",
+			"helpText": "Test Help Text",
+		},
+    	{
+			"name": "z_verbInfinitiveFollowedByObject",
+			"tags": "verb",
+			"helpText": "Test Help Text",
+		},
+		{
+			"name": "z_verbOpinion",
+			"tags": "verb",
+			"helpText": "Test Help Text",
+		},
+
+    	{
+			"name": "z_verbPreposition",
+			"tags": "verb",
+			"helpText": "Test Help Text",
+		},
+		{
+			"name": "z_verbSport",
+			"tags": "verb",
+			"helpText": "Test Help Text",
+		},
+		{
+			"name": "z_weatherEvent",
+			"tags": "",
+			"helpText": "Test Help Text",
+		}
+	],
+	"commands": [
+		{
+ 			"name": "articleAdd",
+ 			"tags": "",
+ 			"helpText": "",
+ 		},
+		{
+ 			"name": "capFirst",
+ 			"tags": "",
+ 			"helpText": "",
+ 		},
+		{
+ 			"name": "conjugateFuture",
+ 			"tags": "",
+ 			"helpText": "",
+ 		},
+		{
+ 			"name": "conjugateFuturePerfect",
+ 			"tags": "",
+ 			"helpText": "",
+ 		},
+		{
+ 			"name": "conjugateGerund",
+ 			"tags": "",
+ 			"helpText": "",
+ 		},
+		{
+ 			"name": "conjugatePast",
+ 			"tags": "",
+ 			"helpText": "",
+ 		},
+		{
+ 			"name": "conjugatePerfect",
+ 			"helpText": "",
+ 		},
+		{
+ 			"name": "conjugatePluperfect",
+ 			"tags": "",
+ 			"helpText": "",
+ 		},
+		{
+ 			"name": "conjugatePresent",
+ 			"tags": "",
+ 			"helpText": "",
+ 		},
+		{
+ 			"name": "empty",
+ 			"tags": "",
+ 			"helpText": "",
+ 		},
+		{
+ 			"name": "endHere",
+ 			"tags": "",
+ 			"helpText": "",
+ 		},
+		{
+ 			"name": "hash",
+ 			"tags": "",
+ 			"helpText": "",
+ 		},
+		{
+ 			"name": "lower",
+ 			"tags": "",
+ 			"helpText": "",
+ 		},
+		{
+ 			"name": "numberCommas",
+ 			"tags": "",
+ 			"helpText": "",
+ 		},
+		{
+ 			"name": "numberToWords",
+ 			"tags": "",
+ 			"helpText": "",
+ 		},
+		{
+ 			"name": "plural",
+ 			"tags": "",
+ 			"helpText": "",
+ 		},
+		{
+ 			"name": "proper",
+ 			"tags": "",
+ 			"helpText": "",
+ 		},
+		{
+ 			"name": "random",
+ 			"tags": "",
+ 			"helpText": "",
+ 		},
+		{
+ 			"name": "randomNth",
+ 			"tags": "",
+ 			"helpText": "",
+ 		},
+		{
+ 			"name": "removeQuotes",
+ 			"tags": "",
+ 			"helpText": "",
+ 		},
+		{
+ 			"name": "romanNumeral",
+ 			"tags": "",
+ 			"helpText": "",
+ 		},
+		{
+ 			"name": "title",
+ 			"tags": "",
+ 			"helpText": "",
+ 		},
+		{
+ 			"name": "trimAtFirstComma",
+ 			"tags": "",
+ 			"helpText": "",
+ 		},
+		{
+ 			"name": "trimAtFirstSpace",
+ 			"tags": "",
+ 			"helpText": "",
+ 		},
+		{
+ 			"name": "upper",
+ 			"tags": "",
+ 			"helpText": "",
+ 		}
+	],
+	"multiparts": [
+		{
+ 			"name": "Pause",
+ 			"tags": "P",
+ 			"helpText": "ToBeOrNotToBot will not send any unrelated messages in between your multipart !bot talk. For that reason Pauses are limited to a max of 8 seconds.",
+ 		},
+		{
+ 			"name": "Delay",
+ 			"tags": "D",
+ 			"helpText": "Delays can be any number of seconds since ToBeOrNotToBot can send other unrelated messages during the delay.",
+ 		},
+ 		{
+ 			"name": "Option Set",
+ 			"tags": "|",
+ 			"helpText": "Insert an option set to let ToBeOrNotToBot select from an option of values",
+ 		}
+	]
+}

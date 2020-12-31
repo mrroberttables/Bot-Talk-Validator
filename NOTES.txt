@@ -1,0 +1,39 @@
+Features:
+    - clickable list of variable snippets (incorporated from JSFiddle)
+    - insetAtCaret (incorporated from JSFiddle)
+    - insertCommand (incorporated from JSFiddle)
+    - snippetFilter (incorporated from JSFiddle)
+    - styled Commands similar to variables with scrolling list and filter (ability to add tags and help text similar to variables)
+    - insertPause/Delay will insert a pause or a delay and place cursor inside to type length
+    - If you hover over a value, a box will display help text
+    - There is a character count of the number of characters in the box
+    - data moved into JSON file
+    - all snippets and commands are generated in the scripts, so adding, removing, adding tags/help text for both variables and commands is in one place in the data.json
+Validations:
+    - Check if all variables are valid
+        - Will search for all text in format of #text# and verify 'text' is a valid variable
+    - Will count to ensure there are an even number of '#' characters, indicating no mismatched '#'s
+    - Check if all commands are valid
+        - Will search for all text in the format <text> or </text> will check that snippets are matched and nested appropriately
+        - Will check that the command is a valid command from the list
+        - Processing through them in order, if it encounters an opening tag, it will add 1 to an internal count and add it to a stack
+        - if it encounters a closing tag it will subtract 1 to the internal count, and verify it matches the top item on the stack
+        - if the count ever drops below 0 that indicates there is a closing tag before the corresponding opening
+        - if at the end of the processing the count is not 0 it indicates there is an opening without a corresponding closing
+    - Will check if option sets are valid
+        - Will search for all '{' and '}' and check that they are matched and nested appropriately
+        - Will process them similar to the command by keeping a count of opening and closing braces
+        - It will validate that no options are solely whitespace
+    - Will check if pauses and delays are valid
+        - Will search for all text in the format {P=x} or {D=x} (ignoring whitespace)
+        - it will validate the 'x' is a positive integer
+        - In the case of a pause it will ensure the value is no larger than 8 seconds
+Notes:
+    - There is method that runs onLoad that loads all the variables, commands, and pause/delay options into the lists
+        - This needs to run either onLoad of the page or if its placed in a collapsible element then the first time that
+        - it is expanded (it should only ever run once per page load)
+    - The variables, commands, and pause and delay have been moved into a json file
+        - It contains the list of objects containing the variable name, the tags, and the help text
+        - If you need to update the list of variables or commands, all you need to do is modify this file
+        - This takes the long list of elements out of the html, it consolidates the text so you don't need to repeat it 
+        - or hunt for all the spots where you list the variable
