@@ -11,6 +11,16 @@ function checkVariablesExist(input) {
 		let isMatch = false;
 		//Strip out the '#'
 		let variable = matches[i].replaceAll('#','');
+		//verify variable matches format variable[integer], or reject it
+		if(!variable.match(/[a-zA-Z_]*\d*/g)) {
+			allMatch = false;
+			incorrect.push(matches[i]);
+			continue;
+		}
+		else {
+			//this matches the appropriate variable format, strip off any digits if present
+			variable = variable.replace(/\d*$/,'');
+		}
 		//loop through all known variables to compare
 		for(var j = data['variables'].length - 1; j >= 0; j--) {
 			//check to see if the current potential variable matches the know variable

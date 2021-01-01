@@ -1,9 +1,15 @@
-- Autofill - contentEditable
-- Option Set Insert
+- Testing
 - Variables with numbers
+    - Validator could also notify the user if it only sees one occurrence of #variable[integer]#, but that's less important since the bot talk would work regardless.
+- Autofill - contentEditable
 - Syntax highligting
+
+
 
 -Should I catch and notify of #xxxx or xxxx# as potential variables, may be mistaken if they are typing a #toobyJokes 
 -Should I catch and notify of <xxxx </xxxx or xxxxx> as potentical commands, may already be okay with how nesting/matching is done
 -Check regex matching of variables and commands
   - Ignore whitespace?
+
+
+
