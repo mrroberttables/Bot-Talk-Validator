@@ -158,7 +158,7 @@ function checkValidOptions(input) {
 
 function validatePauseAndDelay(input) {
 	//match any input that is '{D=x}' or '{P=x}' with possible whitespace in between
-  	let pauses = input.match(/\{\s*[DP]\s*\=\s*-?\w*\s*\}/g)||[];
+  	let pauses = input.match(/\{\s*[DP]\s*\=\s*[^}]*\}/g)||[]; //  /\{\s*[DP]\s*\=\s*-?\w*\s*\}/g
   	let allValid = true;
   	if (pauses.length > 0) {
 
@@ -166,7 +166,8 @@ function validatePauseAndDelay(input) {
 	  		let value = pauses[i].replace('{','').replace('P','').replace('D','').replace('=','').replace('}','').trim();
 
 	  		const parsedValue = parseInt(value);
-	  		if(isNaN(parsedValue) || parsedValue <= 0) {
+
+	  		if( !value.match(/[\-\w0-9]*/g) ||isNaN(parsedValue) || parsedValue <= 0) {
 	  			allValid = false;
 				output.innerHTML += "<span class='error'>&#10006; Sorry pauses and delays must be a valid positive integer value.</span><br>";
 				break; //Break out so only 1 message is ever printed
