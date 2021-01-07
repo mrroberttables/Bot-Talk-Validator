@@ -9,9 +9,13 @@ Features:
     - There is a character count of the number of characters in the box
     - data moved into JSON file
     - all snippets and commands are generated in the scripts, so adding, removing, adding tags/help text for both variables and commands is in one place in the data.json
+    - will insert an empty 2-value option set
 Validations:
     - Check if all variables are valid
         - Will search for all text in format of #text# and verify 'text' is a valid variable
+        - Will verify it is in format variable[integer] and strip off the integer in chekcing variable name
+        - Will notify if a variable has an associated integer but is not repeated elsewear in the message
+            this will give a warning
     - Will count to ensure there are an even number of '#' characters, indicating no mismatched '#'s
     - Check if all commands are valid
         - Will search for all text in the format <text> or </text> will check that snippets are matched and nested appropriately

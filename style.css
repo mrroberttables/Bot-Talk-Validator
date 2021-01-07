@@ -1,7 +1,7 @@
 #bottalkverifierWrap {
   display: grid;
   grid-template-columns: 33% 33% 33%;
-  grid-template-rows: 125px 220px 500px auto;
+  grid-template-rows: 125px 250px 500px auto;
   width: 900px;
 }
 
@@ -136,4 +136,8 @@
 
 .correct {
   color: green;
+}
+
+.warning {
+  color: #ff980f;
 }

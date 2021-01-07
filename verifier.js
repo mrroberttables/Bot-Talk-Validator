@@ -5,6 +5,8 @@ function checkVariablesExist(input) {
 	let matches = input.match(/#[\w\s]*#/g)||[];
 	let allMatch = true;
 	let incorrect = [];
+	variableCounts = {};
+
 
 	//loop through all potential variables
 	for (var i = matches.length - 1; i >= 0; i--) {
@@ -19,6 +21,15 @@ function checkVariablesExist(input) {
 		}
 		else {
 			//this matches the appropriate variable format, strip off any digits if present
+			parts = variable.match(/[a-zA-Z_]+|[0-9]+/g);
+			if(!variableCounts.hasOwnProperty(parts[0])) {
+				variableCounts[parts[0]] = [];
+			}
+			//Only add if there is a number associated with it
+			if(parts[1] !== undefined) {
+				variableCounts[parts[0]].push(parts[1]);
+			}
+			
 			variable = variable.replace(/\d*$/,'');
 		}
 		//loop through all known variables to compare
@@ -44,6 +55,25 @@ function checkVariablesExist(input) {
 	}
 	else {
 		output.innerHTML += `<span class='error'>&#10006; Sorry, the following are not valid variables: ${incorrect}</span><br>`;
+	}
+
+	//Check for numbers in variables that aren't repeated
+	let nonUnique = true;
+	for(const vars in variableCounts) {
+		if(variableCounts[vars].length > 0) {
+			uniques = [...new Set(variableCounts[vars])];
+
+			for(const uniqueValue in uniques) {
+				if(variableCounts[vars].filter(x => x === uniques[uniqueValue]).length === 1) {
+					nonUnique = false;
+					break;
+				}
+			}
+			if(!nonUnique) {
+				output.innerHTML += `<span class='warning'>&#10148;There is a variable with an integer that is not repeated. While ToBeOrNotToBot will process the message, it is unnecessary.</span><br>`;
+				break;
+			}
+		}
 	}
 }
 
