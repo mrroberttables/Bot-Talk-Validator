@@ -204,11 +204,6 @@ data = {
 			"tags": "",
 			"helpText": "Test Help Text",
 		},
-    	{
-			"name": "movieUnlock",
-			"tags": "",
-			"helpText": "Test Help Text",
-		},
 		{
 			"name": "nothing",
 			"tags": "",
