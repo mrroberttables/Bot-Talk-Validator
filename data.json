@@ -224,6 +224,11 @@ data = {
 			"tags": "grammar",
 			"helpText": "Test Help Text",
 		},
+		{
+			"name": "projectx",
+			"tags": "constant",
+			"helpText": "Test Help Text",
+		},
     	{
 			"name": "recipeUnlockBulkingUpIntro",
 			"tags": "food complex phrase",
