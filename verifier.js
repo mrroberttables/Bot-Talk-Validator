@@ -323,14 +323,17 @@ function populateLists() {
 	}
 
 	let snippetList = document.getElementById('commandUL');
+
+	for(var k = 0; k < data['multiparts'].length; k++) {
+		snippetList.innerHTML += `<li><a href="#" onmouseover="showHelp('helpBox','multiparts', '${data['multiparts'][k]['name']}')" onmouseout="hideHelp('helpBox')" onclick="insertPause('bottalktest', '${data['multiparts'][k]['tags']}');return false;">${data['multiparts'][k]['name']}</a></li>`;
+	}
+
 	for(var j = 0; j < data['commands'].length; j++) {
 		snippetList.innerHTML += `<li><a href="#" onmouseover="showHelp('helpBox','commands', '${data['commands'][j]['name']}')" onmouseout="hideHelp('helpBox')" onclick="insertCommand('bottalktest', '${data['commands'][j]['name']}');return false;">${data['commands'][j]['name']}<span class='hide'>${data['commands'][j]['tags']}</span></a></li>`;
 	}
 
-	let delayList = document.getElementById('multipartUL');
-	for(var k = 0; k < data['multiparts'].length; k++) {
-		delayList.innerHTML += `<li><a href="#" onmouseover="showHelp('helpBox','multiparts', '${data['multiparts'][k]['name']}')" onmouseout="hideHelp('helpBox')" onclick="insertPause('bottalktest', '${data['multiparts'][k]['tags']}');return false;">${data['multiparts'][k]['name']}</a></li>`;
-	}
+	//let delayList = document.getElementById('multipartUL');
+	
 
 	//check in case a refresh keeps text in the box
 	characterCounter(); 	
