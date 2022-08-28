@@ -1,0 +1,15 @@
+moving by clicking
+tutorial
+styling
+Group Total Styling
+mobile layout
+Redo generation algorithm
+
+
+phone app
+endless mode
+
+
+
+<!-- CSS Theming: https://www.simpleweblearning.com/how-to-create-light-dark-mode-toggle-with-css-and-javascript/ -->
+<!-- Modal: https://www.w3schools.com/howto/howto_css_modals.asp -->

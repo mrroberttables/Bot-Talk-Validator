@@ -1,0 +1,136 @@
+<!-- Icons From:
+Medal icons created by zky.icon - Flaticon - https://www.flaticon.com/free-icons/medal
+Settings icons created by Google - Flaticon - https://www.flaticon.com/free-icons/settings
+Light bulb icons created by Cursor Creative - Flaticon - https://www.flaticon.com/free-icons/light-bulb
+Undo icons created by Freepik - Flaticon - https://www.flaticon.com/free-icons/undo
+Redo icons created by Freepik - Flaticon - https://www.flaticon.com/free-icons/redo
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Balancing Act</title>
+        <link rel="stylesheet" type="text/css" href="styles/style.css">
+        <link rel="stylesheet" type="text/css" href="styles/modal.css">
+        <link rel="stylesheet" type="text/css" href="styles/toggles.css">
+        <script src="scripts/Difficulty.js"></script>
+        <script src="scripts/BalancingAct.js"></script>
+        <script src="scripts/Timer.js"></script>
+        <script src="scripts/command.js"></script>
+        <script src="scripts/utils.js"></script>
+        <script src="scripts/modal.js"></script>
+        <script src="scripts/stats.js"></script>
+        <script src="scripts/script.js"></script>
+    </head>
+    <body onload="init()">
+        <div id="headerDiv">
+            <div class="headerContainer alignLeft">
+                <button class="btn headerBtn" id="howToPlayBtn" onclick="testStop()"><img id="htpImage" src="assets/light-bulb_light.png"></button>
+            </div>
+            <div class="headerContainer alignCenter">
+                <span id="logo">Balancing Act</span>
+            </div>
+            <div class="headerContainer alignRight">
+                <button class="btn headerBtn" id="statsBtn"><img id="statsImage" src="assets/medals_light.png"></button>
+                <button class="btn headerBtn" id="settingBtn"><img id="settingsImage" src="assets/settings_light.png"></button>
+            </div>
+            
+            
+        </div>
+        <div id="gameDiv">
+            <div id="gameHeader" class="shadow">
+                <div class="gameHeadContainer alignLeft"></div>
+                <div class="gameHeadContainer alignCenter">
+                    <span id="timerSpan">0:00</span>
+                </div>
+                <div class="gameHeadContainer alignRight">
+                    <button class="btn" id="undoBtn"><img id="undoImage" src="assets/undo_light.png" onclick="undo()"></button>
+                    <button class="btn" id="redoBtn"><img id="redoImage" src="assets/redo_light.png" onclick="redo()"></button>
+                </div>
+            </div>
+            <div id="gameBody">
+                <div id="poolDiv" class="shadow numberPool">
+                    <!-- This needs to become the drag target or the click target-->
+                </div>
+                <div id="targetDiv" class="shadow">
+                    <span id="targetNumber" />
+                </div>
+                <div id="groupsDiv"></div>
+            </div>
+        </div>
+
+        <div id="settingsModal" class="modal">
+            <div id="settingsContent" class="modal-content">
+                <span id="settingsClose" class="close">&times;</span>
+                <button id="newGameBtn" class="modal-block btn">New Game</button>
+                <button class="modal-block btn">About</button>
+                <div class="modal-block">
+                    <label class="switch">
+                        <input type="checkbox" id="groupTotalsSetting" checked onclick="displayGame()" />
+                        <span class="slider round"></span>
+                    </label>
+                    Show Group Totals
+                </div>
+                <div class="modal-block">
+                    <label class="switch">
+                        <input type="checkbox" id="themeSetting" checked onclick="toggleTheme()"/>
+                        <span class="slider round"></span>
+                    </label>
+                    Dark Mode
+                </div>              
+            </div>
+        </div>
+        <div  id="statsModal" class="modal">
+            <div id="statsContent" class="modal-content">
+                <span id="statsClose" class="close">&times;</span>
+                <table id="statsTable">
+                    <thead>
+                        <th>Difficulty</th>
+                        <th>Games Played</th>
+                        <th>Games Won</th>
+                        <th>Best Time</th>
+                    </thead>
+                    <tbody id='statsBody'></tbody> 
+                </table>
+                <button class="modal-block btn" onclick="resetStats()">Reset Stats</button>
+                <span class="statsWarning">*there is a confirmation</span>
+            </div>
+        </div>
+        <div id="newGameModal" class="modal">
+            <div id="newGameContent" class="modal-content">
+                <span id="newGameClose" class="close">&times;</span>
+                <div class="modal-block">
+                    <span>Difficulty:</span>
+                    <div class="newGameRadio">
+                        <input type="radio" name="difficulty" id="beginner" value="0">
+                        <label for="beginner">Beginner</label>
+                    </div>
+                    <div class="newGameRadio">
+                        <input type="radio" name="difficulty" id="easy" value="1">
+                        <label for="easy">Easy</label>
+                    </div>
+                    <div class="newGameRadio">
+                        <input type="radio" name="difficulty" id="medium" value="2">
+                        <label for="medium">Medium</label>
+                    </div>
+                    <div class="newGameRadio">
+                        <input type="radio" name="difficulty" id="hard" value="3">
+                        <label for="hard">Hard</label>
+                    </div>
+                    <div class="newGameRadio">
+                        <input type="radio" name="difficulty" id="expert" value="4">
+                        <label for="expert">Expert</label>
+                    </div>
+                    <button class="modal-block btn" onclick="startNewGame()">Start</button>
+                </div>
+            </div>
+        </div>
+        <div id="winModal" class="modal">
+            <div id="winContent" class="modal-content">
+                <h2>Congratulations</h2>
+                <p>Time Taken:</p>
+                <p id="winTimeSpan">0:00</p>
+                <button id="winNewGame" class="modal-block btn" onclick="">New Game</button>
+            </div>
+        </div>
+    </body>
+</html>

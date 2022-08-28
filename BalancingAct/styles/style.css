@@ -1,0 +1,162 @@
+:root, [data-theme="default"] {
+    --body-bg-color: #222;
+    --btn-bg-color: #444;
+    --btn-bg-color-hover: #555;
+    --text-color: white;
+    --modal-bg-color: #333;
+    --toggle-bg-color: #777;
+    --action-color: #229412;
+    --warning-color: #ffcccb;
+    --card-color: #777;
+    --number-bg-color:  #666;
+    --number-border-color: #555;
+    --drop-shadow:  #eee;
+}
+
+[data-theme="light"] {
+    --body-bg-color: #ddd;
+    --btn-bg-color: #bbb;
+    --btn-bg-color-hover: #aaa;
+    --text-color: black;
+    --modal-bg-color: #ccc;
+    --toggle-bg-color: #777;
+    --action-color: #229412;
+    --warning-color: red;
+    --card-color: #777;
+    --number-bg-color:  #888;
+    --number-border-color: #999;
+    --drop-shadow:  #111;
+}
+
+body {
+    background-color: var(--body-bg-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Lucida Console', 'Courier New', monospace;
+}
+
+#headerDiv {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    font-size: 2.4em;
+}
+
+.headerContainer, .gameHeadContainer  {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+}
+
+.alignLeft {
+    justify-content: flex-start;
+}
+
+.alignCenter {
+    justify-content: center
+}
+
+.alignRight {
+    justify-content: flex-end;
+}
+
+.shadow {
+    box-shadow: 1px 1px 2px var(--drop-shadow);
+}
+
+.btn {
+    background-color: var(--btn-bg-color);
+    color: var(--text-color);
+    border: none; /* Remove borders */
+    padding: 2px 6px; /* Some padding */
+    font-size: 16px; /* Set a font size */
+    cursor: pointer; /* Mouse pointer on hover */
+    margin-right: 5px;
+  }
+
+.btn:hover {
+    background-color: var(--btn-bg-color-hover);
+}
+
+#logo {
+    color: var(--text-color);
+}
+
+#howToPlayBtn {
+    float: inline-start;
+}
+
+#statsBtn, #settingBtn, #undoBtn, #redoBtn {
+    float: inline-end;
+}
+
+#gameDiv {
+    width: 30%;
+    background-color: var(--body-bg-color);
+}
+
+#gameHeader {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    background-color: var(--card-color);
+    border-radius: 5px;
+}
+
+.newGameRadio {
+    display: block;
+}
+
+td {
+    text-align: center;
+}
+
+.numberPool {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    width: 100%;
+    height: auto;
+    background-color: var(--card-color);
+    border-radius: 5px;
+    margin-top:  5px;
+}
+
+.number {
+    margin: 5px;
+    padding: 5px;
+    background-color: var(--number-bg-color);
+    border: 1px solid var(--number-border-color);
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+.emptyNumber {
+    width: 20px;
+}
+
+#targetDiv {
+    width:  100%;
+    height:  50px;
+    margin-top: 5px;
+    background-color: var(--action-color);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    font-size: 2.4em;
+}
+
+.drag-over {
+    border: 3px solid red;
+}
+
+@media screen and (max-width: 800px) {
+    #gameDiv {
+        width: 100%;
+    }
+}
