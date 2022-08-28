@@ -1,6 +1,7 @@
 var stats;
 var game;
 var timer;
+var selected;
 
 function toggleTheme() {
     let isDark = document.getElementById('themeSetting').checked;
@@ -37,6 +38,7 @@ function displayGame() {
         pool.addEventListener("dragover", function(e) {dragOver(e, this); });
         pool.addEventListener("dragleave", function(e) {dragLeave(e, this); });
         pool.addEventListener("drop", function(e) {drop(e, this); });
+        pool.addEventListener("click", function(e) {moveFromClick(e, this); });
         pool.setAttribute("init", true);
     }
     
@@ -80,6 +82,7 @@ function displayGame() {
             groupDiv.addEventListener("dragover", function(e) {dragOver(e, this); });
             groupDiv.addEventListener("dragleave", function(e) {dragLeave(e, this); });
             groupDiv.addEventListener("drop", function(e) {drop(e, this); });
+            groupDiv.addEventListener("click", function(e) {moveFromClick(e, this); });
         }        
 
         var groupTotal = 0;
@@ -131,6 +134,7 @@ function createNumberElement(value, dataValue) {
     numDiv.classList.add("dynamic");
     numDiv.addEventListener('dragstart', dragStart);
     if(dataValue !== "") {
+        numDiv.addEventListener("click", selectNumber);
         numDiv.setAttribute("draggable", true);
     }
 
@@ -186,8 +190,18 @@ function moveNumber(value, oldGroup, newGroup) {
     //Check if they won the game
     if(game.checkResult()) {
         processWin();
+    }   
+}
+
+function moveFromClick(e, element) {
+    if(selected) {
+        if (selected.target.classList.contains("numSelected")) {
+            selected.target.classList.remove("numSelected");
+        }
+        let newGroup = element.getAttribute('data-groupid');
+        moveNumber(parseInt(selected.value), parseInt(selected.group), parseInt(newGroup));
     }
-    
+    selected = null;
 }
 
 function processWin() {
@@ -198,10 +212,21 @@ function processWin() {
     stats.addWin(game.difficulty, timer.getSeconds());
 }
 
+function selectNumber(e) {
+    if(selected && selected.target.classList.contains("numSelected")) {
+        selected.target.classList.remove("numSelected");
+    }
+
+    let val = e.target.getAttribute('data-value');
+    let group = e.target.parentNode.getAttribute('data-groupid');
+    selected = {value: val, group: group, target: e.target}
+    e.target.classList.add("numSelected");
+    event.stopPropagation();
+}
+
 function dragStart(e) {
     let val = e.target.getAttribute('data-value');
     let group = e.target.parentNode.getAttribute('data-groupid');
-    let object
     e.dataTransfer.setData('text/plain',JSON.stringify({value: val, group: group}));
 }
 

@@ -6,6 +6,7 @@
     --modal-bg-color: #333;
     --toggle-bg-color: #777;
     --action-color: #229412;
+    --action-color-compliment: #114a09;
     --warning-color: #ffcccb;
     --card-color: #777;
     --number-bg-color:  #666;
@@ -21,6 +22,7 @@
     --modal-bg-color: #ccc;
     --toggle-bg-color: #777;
     --action-color: #229412;
+    --action-color-compliment: #90c988;
     --warning-color: red;
     --card-color: #777;
     --number-bg-color:  #888;
@@ -153,6 +155,10 @@ td {
 
 .drag-over {
     border: 3px solid red;
+}
+
+.numSelected {
+    background-color: var(--action-color-compliment);
 }
 
 @media screen and (max-width: 800px) {

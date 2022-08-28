@@ -1,4 +1,3 @@
-moving by clicking
 tutorial
 styling
 Group Total Styling
