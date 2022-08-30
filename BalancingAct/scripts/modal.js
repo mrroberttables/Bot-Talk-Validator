@@ -66,4 +66,21 @@ function initModals(stats) {
     winModal.style.display = "none";
     gameModal.style.display = "block";
   }
+
+  //About Modal
+  aboutModal = document.getElementById("aboutModal");
+  aboutBtn = document.getElementById("aboutBtn");
+
+  aboutClose = document.getElementById("aboutClose");
+
+  aboutBtn.onclick = function() {
+    settingsModal.style.display = "none";
+    aboutModal.style.display = "block";
+
+  }
+
+  aboutClose.onclick = function() {
+    aboutModal.style.display = "none";
+    settingsModal.style.display = "block";
+  }
 }

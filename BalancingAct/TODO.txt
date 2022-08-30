@@ -3,12 +3,10 @@ styling
 Group Total Styling
 mobile layout
 Redo generation algorithm
-
-
 phone app
-endless mode
-
 
 
 <!-- CSS Theming: https://www.simpleweblearning.com/how-to-create-light-dark-mode-toggle-with-css-and-javascript/ -->
 <!-- Modal: https://www.w3schools.com/howto/howto_css_modals.asp -->
+<!-- Overlay clipping: https://stackoverflow.com/questions/20242806/hole-in-overlay-with-css -->
+<!-- https://stackoverflow.com/questions/288699/get-the-position-of-a-div-span-tag -->

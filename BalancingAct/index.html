@@ -19,6 +19,7 @@ Redo icons created by Freepik - Flaticon - https://www.flaticon.com/free-icons/r
         <script src="scripts/utils.js"></script>
         <script src="scripts/modal.js"></script>
         <script src="scripts/stats.js"></script>
+        <script src="scripts/tutorial.js"></script>
         <script src="scripts/script.js"></script>
     </head>
     <body onload="init()">
@@ -62,7 +63,7 @@ Redo icons created by Freepik - Flaticon - https://www.flaticon.com/free-icons/r
             <div id="settingsContent" class="modal-content">
                 <span id="settingsClose" class="close">&times;</span>
                 <button id="newGameBtn" class="modal-block btn">New Game</button>
-                <button class="modal-block btn">About</button>
+                <button id="aboutBtn" class="modal-block btn">About</button>
                 <div class="modal-block">
                     <label class="switch">
                         <input type="checkbox" id="groupTotalsSetting" checked onclick="displayGame()" />
@@ -132,5 +133,14 @@ Redo icons created by Freepik - Flaticon - https://www.flaticon.com/free-icons/r
                 <button id="winNewGame" class="modal-block btn" onclick="">New Game</button>
             </div>
         </div>
+        <div id="aboutModal" class="modal">
+            <div id="aboutContent" class="modal-content">
+                <span id="aboutClose" class="close">&times;</span>
+                <p>Copyright 2022</p>
+                <p>Licensed under <a href="https://mit-license.org/">MIT License</a></p>
+                <p>v0.9.0</p>
+            </div>
+        </div>
+        <!-- <div id="overlay"></div> -->
     </body>
 </html>
