@@ -51,6 +51,19 @@ function createTutorialButton(text, parentOffset, event) {
 	return next;
 }
 
+function createCloseButton(button) {
+	var offset = button.getBoundingClientRect();
+	var close = document.createElement("button");
+	close.innerHTML = "Close";
+	close.classList.add("btn");
+	close.style.position = "absolute";
+	close.style.top = `${offset.top}px`;
+	close.style.left = `${offset.right + 5}px`;
+	close.addEventListener("click", closeTutorial);
+
+	return close;
+}
+
 var currentPuzzle;
 var currentTime;
 
@@ -83,6 +96,8 @@ function startTutorial() {
 	//Add next button
 	var next = createTutorialButton("Next", lastDivOffsets, tutorial2);
 	overlay.appendChild(next);
+	var close = createCloseButton(next);
+	overlay.appendChild(close);
 
 }
 
@@ -99,6 +114,8 @@ function tutorial2() {
 	//Add next button
 	var next = createTutorialButton("Next", lastDivOffsets, tutorial3);
 	overlay.appendChild(next);
+	var close = createCloseButton(next);
+	overlay.appendChild(close);
 }
 
 function tutorial3() {
@@ -114,6 +131,8 @@ function tutorial3() {
 	//Add next button
 	var next = createTutorialButton("Next", lastDivOffsets, tutorialFinal);
 	overlay.appendChild(next);
+	var close = createCloseButton(next);
+	overlay.appendChild(close);
 }
 
 function tutorialFinal() {
