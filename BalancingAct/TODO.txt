@@ -1,4 +1,6 @@
 tutorial
+  - exit btn
+i18n
 styling
 Group Total Styling
 mobile layout

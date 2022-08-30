@@ -1,12 +1,14 @@
 var stats;
+var settings;
 var game;
 var timer;
 var selected;
 
 function toggleTheme() {
-    let isDark = document.getElementById('themeSetting').checked;
-    isDark ? document.body.removeAttribute('data-theme') : document.body.setAttribute('data-theme', 'light');
-    if(isDark) {
+    settings.setDarkMode(document.getElementById('themeSetting').checked);
+    settings.saveSettings();
+    settings.getDarkMode() ? document.body.removeAttribute('data-theme') : document.body.setAttribute('data-theme', 'light');
+    if(settings.getDarkMode()) {
         //Put the light icons on
         document.getElementById('htpImage').src = 'assets/light-bulb_light.png';
         document.getElementById('statsImage').src = 'assets/medals_light.png';
@@ -21,6 +23,12 @@ function toggleTheme() {
         document.getElementById('undoImage').src = 'assets/undo.png';
         document.getElementById('redoImage').src = 'assets/redo.png';
     }   
+}
+
+function toggleGroupTotals() {
+    settings.setShowTotals(document.getElementById('groupTotalsSetting').checked);
+    settings.saveSettings();
+    displayGame();
 }
 
 
@@ -97,7 +105,7 @@ function displayGame() {
         }
 
         //Add the total
-        if(document.getElementById('groupTotalsSetting').checked) {
+        if(settings.getShowTotals()) {
             var totalDiv = document.createElement("div");
             node = document.createTextNode(groupTotal);
             totalDiv.classList.add("groupTotal" + k);
@@ -169,6 +177,11 @@ function init() {
     stats.loadStats();
 
     initModals(stats);
+
+    settings = new Settings();
+    settings.loadSettings();
+
+    toggleTheme();
 
     //Remove after testing
     game = new BalancingAct(1);

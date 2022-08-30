@@ -15,6 +15,7 @@ Redo icons created by Freepik - Flaticon - https://www.flaticon.com/free-icons/r
         <script src="scripts/Difficulty.js"></script>
         <script src="scripts/BalancingAct.js"></script>
         <script src="scripts/Timer.js"></script>
+        <script src="scripts/Settings.js"></script>
         <script src="scripts/command.js"></script>
         <script src="scripts/utils.js"></script>
         <script src="scripts/modal.js"></script>
@@ -67,7 +68,7 @@ Redo icons created by Freepik - Flaticon - https://www.flaticon.com/free-icons/r
                 <button id="aboutBtn" class="modal-block btn">About</button>
                 <div class="modal-block">
                     <label class="switch">
-                        <input type="checkbox" id="groupTotalsSetting" checked onclick="displayGame()" />
+                        <input type="checkbox" id="groupTotalsSetting" checked onclick="toggleGroupTotals()" />
                         <span class="slider round"></span>
                     </label>
                     Show Group Totals
@@ -142,6 +143,7 @@ Redo icons created by Freepik - Flaticon - https://www.flaticon.com/free-icons/r
                 <p>v0.9.0</p>
             </div>
         </div>
+        <div id="invisibleOverlay"></div>
         <div id="overlay"></div>
     </body>
 </html>

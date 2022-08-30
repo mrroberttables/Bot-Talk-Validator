@@ -27,6 +27,30 @@ function getCutout(elementNames) {
 	overlay.style.clipPath = hole;
 }
 
+function createTutorialTextBox(text, parent) {
+	var p = document.getElementById(parent).getBoundingClientRect();
+	var div = document.createElement("div");
+	div.innerHTML = text;
+	div.classList.add("tutorialTextBox");
+	div.style.top = `${p.bottom + 5}px`;
+	div.style.left = `${p.left}px`;
+	div.style.width = `${p.width}px`;
+
+	return div;
+}
+
+function createTutorialButton(text, parentOffset, event) {
+	var next = document.createElement("button");
+	next.innerHTML = text;
+	next.classList.add("btn");
+	next.style.position = "absolute";
+	next.style.top = `${parentOffset.bottom + 5}px`;
+	next.style.left = `${parentOffset.left}px`;
+	next.addEventListener("click", event);
+
+	return next;
+}
+
 var currentPuzzle;
 var currentTime;
 
@@ -42,40 +66,22 @@ function startTutorial() {
 
 	let overlay = document.getElementById("overlay");
 	overlay.style.display = "block";
+	let invisible = document.getElementById("invisibleOverlay");
+	invisible.style.display = "block";
 
 	getCutout(["poolDiv","groupsDiv"]);
 
 	//Add first message box
-	var pool = document.getElementById('poolDiv').getBoundingClientRect();
-	var div1 = document.createElement("div");
-	div1.innerHTML = "Divide the pool of numbers...";
-	div1.classList.add("tutorialTextBox");
-	div1.style.top = `${pool.bottom + 5}px`;
-	div1.style.left = `${pool.left}px`;
-	div1.style.width = `${pool.width}px`;
-	overlay.appendChild(div1);
+	overlay.appendChild(createTutorialTextBox("Divide the pool of numbers...","poolDiv"));
 
 	//Add second messsage box
-	var groups = document.getElementById('groupsDiv').getBoundingClientRect();
-	var div2 = document.createElement("div");
-	div2.innerHTML = "into equal groups.";
-	div2.classList.add("tutorialTextBox");
-	div2.style.top = `${groups.bottom + 5}px`;
-	div2.style.left = `${groups.left}px`;
-	div2.style.width = `${groups.width}px`;
-	overlay.appendChild(div2);
+	var lastDiv = createTutorialTextBox("into equal groups.",'groupsDiv');
+	overlay.appendChild(lastDiv);
 
-	let div2Offsets = div2.getBoundingClientRect();
+	let lastDivOffsets = lastDiv.getBoundingClientRect();
 
 	//Add next button
-	var next = document.createElement("button");
-	next.innerHTML = "Next";
-	next.classList.add("btn");
-	next.style.position = "absolute";
-	next.style.top = `${div2Offsets.bottom + 5}px`;
-	next.style.left = `${div2Offsets.left}px`;
-	next.addEventListener("click", tutorial2);
-
+	var next = createTutorialButton("Next", lastDivOffsets, tutorial2);
 	overlay.appendChild(next);
 
 }
@@ -85,26 +91,13 @@ function tutorial2() {
 	overlay.innerHTML = "";
 
 	//Add first message box
-	var target = document.getElementById('targetDiv').getBoundingClientRect();
-	var div1 = document.createElement("div");
-	div1.innerHTML = "Each group must sum to the target.";
-	div1.classList.add("tutorialTextBox");
-	div1.style.top = `${target.bottom + 5}px`;
-	div1.style.left = `${target.left}px`;
-	div1.style.width = `${target.width}px`;
-	overlay.appendChild(div1);
+	let lastDiv = createTutorialTextBox("Each group must sum to the target.",'targetDiv');
+	overlay.appendChild(lastDiv);
 
-	let div1Offsets = div1.getBoundingClientRect();
+	let lastDivOffsets = lastDiv.getBoundingClientRect();
 
 	//Add next button
-	var next = document.createElement("button");
-	next.innerHTML = "Next";
-	next.classList.add("btn");
-	next.style.position = "absolute";
-	next.style.top = `${div1Offsets.bottom + 5}px`;
-	next.style.left = `${div1Offsets.left}px`;
-	next.addEventListener("click", tutorial3);
-
+	var next = createTutorialButton("Next", lastDivOffsets, tutorial3);
 	overlay.appendChild(next);
 }
 
@@ -113,26 +106,13 @@ function tutorial3() {
 	overlay.innerHTML = "";
 
 	//Add first message box
-	var pool = document.getElementById('poolDiv').getBoundingClientRect();
-	var div1 = document.createElement("div");
-	div1.innerHTML = "Drag and drop a number into a group. <br><br>OR <br><br>Click a number to select it. Then click a group to move the number to that group. <br><br>You can move numbers back into the pool, and from group to group.";
-	div1.classList.add("tutorialTextBox");
-	div1.style.top = `${pool.bottom + 5}px`;
-	div1.style.left = `${pool.left}px`;
-	div1.style.width = `${pool.width}px`;
-	overlay.appendChild(div1);
+	let lastDiv = createTutorialTextBox("Drag and drop a number into a group. <br><br>OR <br><br>Click a number to select it. Then click a group to move the number to that group. <br><br>You can move numbers back into the pool, and from group to group.",'poolDiv');
+	overlay.appendChild(lastDiv);
 
-	let div1Offsets = div1.getBoundingClientRect();
+	let lastDivOffsets = lastDiv.getBoundingClientRect();
 
 	//Add next button
-	var next = document.createElement("button");
-	next.innerHTML = "Next";
-	next.classList.add("btn");
-	next.style.position = "absolute";
-	next.style.top = `${div1Offsets.bottom + 5}px`;
-	next.style.left = `${div1Offsets.left}px`;
-	next.addEventListener("click", tutorialFinal);
-
+	var next = createTutorialButton("Next", lastDivOffsets, tutorialFinal);
 	overlay.appendChild(next);
 }
 
@@ -146,26 +126,13 @@ function tutorialFinal() {
 	displayGame();
 
 	//Add first message box
-	var target = document.getElementById('gameBody').getBoundingClientRect();
-	var div1 = document.createElement("div");
-	div1.innerHTML = "A solved puzzle.";
-	div1.classList.add("tutorialTextBox");
-	div1.style.top = `${target.bottom + 5}px`;
-	div1.style.left = `${target.left}px`;
-	div1.style.width = `${target.width}px`;
-	overlay.appendChild(div1);
+	let lastDiv = createTutorialTextBox("A solved puzzle.",'gameBody');
+	overlay.appendChild(lastDiv);
 
-	let div1Offsets = div1.getBoundingClientRect();
+	let lastDivOffsets = lastDiv.getBoundingClientRect();
 
 	//Add next button
-	var next = document.createElement("button");
-	next.innerHTML = "Close";
-	next.classList.add("btn");
-	next.style.position = "absolute";
-	next.style.top = `${div1Offsets.bottom + 5}px`;
-	next.style.left = `${div1Offsets.left}px`;
-	next.addEventListener("click", closeTutorial);
-
+	var next = createTutorialButton("Close", lastDivOffsets, closeTutorial);
 	overlay.appendChild(next);
 }
 
@@ -177,5 +144,7 @@ function closeTutorial() {
 	displayGame();
 
 	overlay.style.display = "none";
+	let invisible = document.getElementById("invisibleOverlay");
+	invisible.style.display = "none";
 	clockStart(timer);
 }
