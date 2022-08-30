@@ -25,6 +25,10 @@ class Timer {
         this._initMinutes = 0;
         this._initSeconds = seconds;
     }
+
+    setMilliseconds(milliseconds) {
+        this._milliseconds = milliseconds;
+    }
  
     setDirection(down) {
         this._isDown = down;

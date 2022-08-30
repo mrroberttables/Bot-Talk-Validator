@@ -161,6 +161,23 @@ td {
     background-color: var(--action-color-compliment);
 }
 
+#overlay {
+    display: none;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0px;
+    left: 0px;
+    background-color: rgba(0,0,0,0.7);
+}
+
+.tutorialTextBox {
+    border: 2px solid #122294;
+    position: absolute;
+    background-color: black;
+    color: white;
+}
+
 @media screen and (max-width: 800px) {
     #gameDiv {
         width: 100%;
