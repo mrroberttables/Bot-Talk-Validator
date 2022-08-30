@@ -1,9 +1,7 @@
-tutorial
-  - exit btn
-i18n
 styling
-Group Total Styling
-mobile layout
+  - Group Total Styling
+  - mobile layout
+i18n
 Redo generation algorithm
 phone app
 
