@@ -1,6 +1,7 @@
 styling
   - Group Total Styling
   - mobile layout
+mobile touch controls
 i18n
 Redo generation algorithm
 phone app

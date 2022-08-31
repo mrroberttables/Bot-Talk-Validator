@@ -6,6 +6,7 @@
     --modal-bg-color: #333;
     --toggle-bg-color: #777;
     --action-color: #229412;
+    --action-blue:  #122294;
     --action-color-compliment: #114a09;
     --warning-color: #ffcccb;
     --card-color: #777;
@@ -22,6 +23,7 @@
     --modal-bg-color: #ccc;
     --toggle-bg-color: #777;
     --action-color: #229412;
+    --action-blue:  #122294;
     --action-color-compliment: #90c988;
     --warning-color: red;
     --card-color: #777;
@@ -154,7 +156,7 @@ td {
 }
 
 .drag-over {
-    border: 3px solid red;
+    border: 3px solid var(--action-blue);
 }
 
 .numSelected {
@@ -183,10 +185,16 @@ td {
 }
 
 .tutorialTextBox {
-    border: 2px solid #122294;
+    border: 2px solid var(--action-blue);
     position: absolute;
     background-color: black;
     color: white;
+}
+
+@media screen and (min-width: 800px) and (max-width: 2600px) {
+    #gameDiv {
+        width: 800px;
+    }
 }
 
 @media screen and (max-width: 800px) {
