@@ -1,5 +1,6 @@
 styling
   - Group Total Styling
+  - Light Mode
   - mobile layout
 mobile touch controls
 i18n

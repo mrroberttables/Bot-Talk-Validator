@@ -13,23 +13,25 @@
     --number-bg-color:  #666;
     --number-border-color: #555;
     --drop-shadow:  #eee;
+    --tutorial-bg: black;
 }
 
 [data-theme="light"] {
-    --body-bg-color: #ddd;
-    --btn-bg-color: #bbb;
-    --btn-bg-color-hover: #aaa;
+    --body-bg-color: #eee;
+    --btn-bg-color: #ddd;
+    --btn-bg-color-hover: #ccc;
     --text-color: black;
-    --modal-bg-color: #ccc;
-    --toggle-bg-color: #777;
+    --modal-bg-color: #bbb;
+    --toggle-bg-color: #888;
     --action-color: #229412;
     --action-blue:  #122294;
     --action-color-compliment: #90c988;
     --warning-color: red;
-    --card-color: #777;
-    --number-bg-color:  #888;
-    --number-border-color: #999;
-    --drop-shadow:  #111;
+    --card-color: #aaa;
+    --number-bg-color:  #bbb;
+    --number-border-color: #ccc;
+    --drop-shadow:  #222;
+    --tutorial-bg: white;
 }
 
 body {
@@ -121,7 +123,7 @@ td {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: flex-start;
     width: 100%;
     height: auto;
@@ -187,8 +189,9 @@ td {
 .tutorialTextBox {
     border: 2px solid var(--action-blue);
     position: absolute;
-    background-color: black;
-    color: white;
+    background-color: var(--tutorial-bg);
+    color: var(--text-color);
+    padding: 3px;
 }
 
 @media screen and (min-width: 800px) and (max-width: 2600px) {
