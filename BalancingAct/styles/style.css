@@ -80,6 +80,7 @@ body {
     font-size: 16px; /* Set a font size */
     cursor: pointer; /* Mouse pointer on hover */
     margin-right: 5px;
+    min-width: 2.4em;
   }
 
 .btn:hover {
