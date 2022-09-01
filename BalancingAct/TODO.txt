@@ -1,6 +1,5 @@
 styling
   - Group Total Styling
-  - mobile layout
   - button and text size
 mobile touch controls
 i18n
