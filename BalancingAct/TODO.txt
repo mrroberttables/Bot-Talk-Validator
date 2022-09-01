@@ -1,6 +1,5 @@
 styling
   - Group Total Styling
-  - Light Mode
   - mobile layout
   - button and text size
 mobile touch controls
