@@ -23,7 +23,7 @@ class BalancingAct {
 	createPuzzle() {
 		this.generateParams();
 		this.generatePuzzle();
-		if(this.negs) {
+		if(this.negatives) {
 			this.target -= this.reduction;
 		}	
 	}
@@ -48,7 +48,6 @@ class BalancingAct {
 		for(var i = 0; i < this.groupsCount; i++) {
 			this.workingGroupsList[i] = [];
 		}
-		//this.workingGroupsList.fill(Array(0), 0, this.groupsCount);
 	}
 
 	generateParams() {
@@ -104,7 +103,6 @@ class BalancingAct {
 		this.negatives = negs;
 		if(negs) {
 			this.reduction = Math.round(this.target * ((Math.random() * 0.6) + 0.1));
-			this.target = this.target - this.reduction;
 		}
 	}
 

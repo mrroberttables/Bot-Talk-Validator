@@ -2,6 +2,7 @@ class Settings {
 	_showGroupTotals = true;
 	_darkMode = true;
 	_language = "en";
+	_lastDifficulty = 0;
 
 	getShowTotals() {
 		return this._showGroupTotals;
@@ -27,8 +28,16 @@ class Settings {
 		this._language = lang;
 	}
 
+	getDifficulty() {
+		return this._lastDifficulty;
+	}
+
+	setDifficulty(diff) {
+		this._lastDifficulty = diff;
+	}
+
 	saveSettings() {
-		let settings = {groupTotals: this._showGroupTotals, dark: this._darkMode, language: this._language};
+		let settings = {groupTotals: this._showGroupTotals, dark: this._darkMode, language: this._language, difficulty: this._lastDifficulty};
 		let settingsString = JSON.stringify(settings);
 
 		localStorage.setItem('gameSettings', settingsString);
@@ -41,6 +50,7 @@ class Settings {
 			this._showGroupTotals = settings.groupTotals;
 			this._darkMode = settings.dark;
 			this._language = settings.language;
+			this._lastDifficulty = settings.difficulty;
 		}
 
 	}

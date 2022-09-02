@@ -151,6 +151,8 @@ function createNumberElement(value, dataValue) {
 
 function startNewGame() {
     let diff = parseInt(document.querySelector('input[name="difficulty"]:checked').value) ?? 0;
+    settings.setDifficulty(diff);
+    settings.saveSettings();
     clockReset(timer);
     var output = document.getElementById("timerSpan");
     output.innerHTML = "0:00";
@@ -181,15 +183,21 @@ function init() {
     settings = new Settings();
     settings.loadSettings();
 
+    //TODO: Set Difficulty from settings
+    let radios = document.getElementsByName("difficulty");
+    for (var i = 0; i < radios.length; i++) {
+        if(parseInt(radios[i].value) === settings.getDifficulty()) {
+            radios[i].checked = true;
+        }
+    }
+
+    timer = new Timer(0, 0, false, updateClock);
+
     toggleTheme();
 
     //Remove after testing
-    game = new BalancingAct(1);
-    stats.addPlay(1);
-    displayGame();
-    gameModal.style.display = "none";
-    timer = new Timer(0, 0, false, updateClock);
-    clockStart(timer);
+    var gameModal = document.getElementById("newGameModal");
+    gameModal.style.display = "block";
 }
 
 
