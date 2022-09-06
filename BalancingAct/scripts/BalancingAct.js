@@ -6,9 +6,10 @@ class BalancingAct {
 	elementCount = 0; //Number of elements in a group
 	negatives = false; //Are negatives allowed in the puzzle
 	numbers = []; //Bank of all numbers
+	solved = true;
 
 	workingGroupsList = [];
-	workingNumberPool = []
+	workingNumberPool = [];
 
 	constructor(difficulty) {
 		this.newPuzzle(difficulty);
@@ -26,6 +27,7 @@ class BalancingAct {
 		if(this.negatives) {
 			this.target -= this.reduction;
 		}	
+		this.solved = false;
 	}
 
 	generatePuzzle() {

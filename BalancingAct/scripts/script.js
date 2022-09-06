@@ -163,7 +163,11 @@ function startNewGame() {
     stats.addPlay(diff);
     displayGame();
     gameModal.style.display = "none";
-    clockStart(timer);
+
+    if(game !== undefined && game.solved === false) {
+        clockStart(timer);
+    }
+    
 }
 
 function resetStats() {
@@ -226,6 +230,7 @@ function moveFromClick(e, element) {
 }
 
 function processWin() {
+    game.solved = true;
     clockStop(timer);
     winModal = document.getElementById("winModal");
     winModal.style.display = "block";
@@ -299,16 +304,4 @@ function redo() {
 function updateClock() {
     var output = document.getElementById("timerSpan");
     output.innerHTML = timer.getTime();
-}
-
-var isStopped = false;
-function testStop() {
-    if(isStopped) {
-        clockStart(timer);
-    }
-    else {
-        clockStop(timer);
-    }
-    
-    isStopped = !isStopped;
 }

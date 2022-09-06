@@ -18,7 +18,9 @@ function initModals(stats) {
   // When the user clicks on <span> (x), close the modal
   settingsSpan.onclick = function() {
     settingsModal.style.display = "none";
-    clockStart(timer);
+    if(game !== undefined && game.solved === false) {
+        clockStart(timer);
+    }
   }
 
   //Stats Modal
@@ -37,7 +39,10 @@ function initModals(stats) {
   // When the user clicks on <span> (x), close the modal
   statsSpan.onclick = function() {
     statsModal.style.display = "none";
-    clockStart(timer);
+    if(game !== undefined && game.solved === false) {
+        clockStart(timer);
+    }
+    
   }
 
   //New Game Modal
@@ -55,7 +60,10 @@ function initModals(stats) {
   // When the user clicks on <span> (x), close the modal
   newGameSpan.onclick = function() {
     gameModal.style.display = "none";
-    clockStart(timer);
+    if(game !== undefined && game.solved === false) {
+        clockStart(timer);
+    }
+    
   }
 
   //Win Modal

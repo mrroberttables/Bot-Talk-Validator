@@ -165,5 +165,8 @@ function closeTutorial() {
 	overlay.style.display = "none";
 	let invisible = document.getElementById("invisibleOverlay");
 	invisible.style.display = "none";
-	clockStart(timer);
+	if(game !== undefined && game.solved === false) {
+        clockStart(timer);
+    }
+    
 }

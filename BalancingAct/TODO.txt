@@ -1,6 +1,8 @@
 styling
   - Group Total Styling
   - button and text size
+Custom mode
+random mode
 i18n
 Redo generation algorithm
 phone app
