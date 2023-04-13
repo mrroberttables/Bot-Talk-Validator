@@ -31,6 +31,7 @@ function draw() {
 				enemies[i].damage(player.getDamageDealt());
 
 				if(enemies[i].getHealth() <= 0) {
+					player.addScore(enemies[i].value);
 					enemies.splice(i,1);
 					continue;
 				}
@@ -55,7 +56,7 @@ function draw() {
 	//Update Hud
 	fill("black");
 	text("Health: " + player.health,10,10);
-	text("Score: " + player.score,750,10);
+	text("Score: " + player.score,10,30);
 
 	if(timer === 0) {
 		enemies.push(new Enemy(1));

@@ -12,6 +12,7 @@ class Enemy {
 	y = 0;
 	deltaX;
 	deltaY;
+	value = 10;
 
 	constructor(difficulty) {
 		//this.image = image;

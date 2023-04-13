@@ -74,5 +74,9 @@ class Player {
 	getArcAngles() {
 		return [this.angle - PLAYER_WIDTH_LEVELS[this.widthLevel], this.angle + PLAYER_WIDTH_LEVELS[this.widthLevel]];
 	}
+
+	addScore(val) {
+		this.score += val;
+	}
 }
 
