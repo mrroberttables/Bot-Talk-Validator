@@ -1,0 +1,21 @@
+body {
+    background-color: #222;
+    color: white;
+    display: grid;
+    font-family: 'Lucida Console', 'Courier New', monospace;
+}
+
+input {
+    width: 25%;
+    margin-bottom: 1em;
+}
+
+textarea {
+    width: 50%;
+    margin-bottom: 1em;
+}
+
+button {
+    width:20%;
+    margin-bottom: 1em;
+}

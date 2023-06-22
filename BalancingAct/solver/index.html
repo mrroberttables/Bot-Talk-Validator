@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Balancing Act Solver</title>
+        <script type="text/javascript" src="script.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <h1>Balancing Act Solver</h1>
+            <label for="target" >Target Number</label>
+            <input type="number" id="target" title="The target each group should sum to."/>
+
+            <label for="group">Group Size</label>
+            <input type="number" id="group" title="The size of each group."/>
+
+            <label for="group">Number of Groups</label>
+            <input type="number" id="count" title="The number of groups in the puzzle"/>
+
+            <label for="poolArea">Number Pool (comma separated list)</label>
+            <textarea type="number" id="poolArea" rows="3" title="A comma separated list of all the numbers to use."></textarea>
+
+            <button id="calculate" onclick="solve()">Solve</button>
+        </div>
+        <h2>Solution(s):</h2>
+        <div id="resultDiv"></div>
+    </body>
+</html>
