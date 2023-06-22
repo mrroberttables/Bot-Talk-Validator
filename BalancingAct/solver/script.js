@@ -5,6 +5,7 @@ function solve() {
     let groupSize = parseInt(document.getElementById('group').value);
     let groupCount = parseInt(document.getElementById('count').value);
     let poolText = document.getElementById('poolArea').value;
+    let getAll = document.getElementById('getAll').checked;
     let pool = poolText.split(',').map(Number);
     let calcGroupCount = pool.length / groupSize;
     let validSets = [];
@@ -35,6 +36,9 @@ function solve() {
         })
         if(potentialSet.size === pool.length) {
             validSolutions.push(potentialSolution);
+            if(!getAll) {
+                break;
+            }
         }
     }
     
