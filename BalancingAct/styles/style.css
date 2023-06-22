@@ -215,3 +215,11 @@ td {
         font-size: 1.4em;
     }
 }
+
+a:link, a:visited {
+    color: var(--text-color);
+}
+
+a:hover {
+    color: var(--btn-bg-color-hover);
+}
