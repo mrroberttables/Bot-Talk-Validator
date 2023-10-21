@@ -1,29 +1,79 @@
-<!-- TODO:
-	Add Upgrades (Spend points how)
-	Add Initial Screen with Instructions
-	Add Game Over
-	Add Pause Menu
-	Add Settings (Music, Keybindings, Reset, High Score, Reset High Score)
-	Balance Game (Change Upgrade Values, enemy values, upgrade prices)
-	Improve Graphics (Background Image, Fog/Darkness?, Enemy Sprite?)
-	Add Music
-	Display Health/Enemy Health
-	Add Increasing Difficulty (Monster Health, Damage, Speed, Spawn Rate, Color)
-	Better Collision Detection
--->
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Sxntry</title>
-	<script type="text/javascript" src="scripts/p5.min.js"></script>
-	<script type="text/javascript" src="scripts/bindings.js"></script>
-	<script type="text/javascript" src="scripts/enemy.js"></script>
-	<script type="text/javascript" src="scripts/player.js"></script>
-	<script type="text/javascript" src="scripts/script.js"></script>
-</head>
-<body>
+    <head>
+        <title>Sxntry</title>
+        <meta charset="UTF-8">
+        <link rel="icon" href="sxntryicon.png"
+    </head>
+    <body>
+        <style>
+            @font-face { font-family: edosz; src: url('edosz.ttf') }
 
-</body>
+            body {
+                font-family: edosz;
+                background-color: #222222;
+                color: white;
+                margin-left: 30px;
+            }
+            h3, h2{
+                color: #f7339d;
+            }
+
+            h1 {
+                color: #f7339d;
+                font-size: 300%;
+            }
+            canvas {
+                height: 600px;
+                width: 960px;
+                background-color: white;
+            }
+
+            a:link {
+                color: #f7339d;
+            }
+
+            a:visited {
+                color: #fdc7e4;
+            }
+
+            #parentDiv {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 30px;
+            }
+        </style>
+        <h1>Sxntry</h1>
+        <div id="parentDiv">
+            <div id="canvasDiv">
+                <canvas id="canvas"></canvas>
+                <script src="index.js"></script>
+                <script>
+                    var engine = new Engine({"args":[],"canvasResizePolicy":2,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":50864,"index.wasm":52315256},"focusCanvas":true,"gdextensionLibs":[]});
+                    engine.startGame();
+                </script>
+            </div>
+            <div id="textDiv">
+                <div>
+                    <h3>Instructions:</h3>
+                    <p>Move your beam to stop the spookies from reaching you in the center.
+                </div>
+                <div>
+                    <h3>Controls:</h3>
+                    <p>Left Arrow - Rotate Counter-Clockwise</p>
+                    <p>Right Arrow - Rotate Clockwise</p>
+                    <p>P - Pause/Unpause</p>
+                    <p>1 - Upgrade Arc</p>
+                    <p>2 - Upgrade Length</p>
+                    <p>3 - Upgrade Speed</p>
+                    <p>4 - Updgrade Strength</p>
+                    <p>5 - Heal +20</p>
+                </div>
+                <div>
+                    <h2>Connect with Sxntry:</h2>
+                    <p>Linktree: <a href="https://linktr.ee/jaredkayofficial" target="_blank">https://linktr.ee/jaredkayofficial</a></p>
+                </div>
+            </div>
+        </div>
+    </body>
 </html>
