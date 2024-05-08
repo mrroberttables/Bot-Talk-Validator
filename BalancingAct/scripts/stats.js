@@ -29,7 +29,7 @@ class Stats {
 	addWin(difficulty, time) {
 		this.#gamesWon[difficulty]++;
 
-		if(this.#bestTimes[difficulty] === null || time < this.#bestTimes[difficulty]) {
+		if(this.#bestTimes[difficulty] === null || this.#bestTimes[difficulty] === undefined || time < this.#bestTimes[difficulty]) {
 			this.#bestTimes[difficulty] = time;
 		}
 
